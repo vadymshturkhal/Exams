@@ -9,7 +9,7 @@ const getvaluebetween = (string, prefix, suffix) => {
   let isPrefixFound = false;
   let isSuffixFound = false;
 
-  for (let i = 0; i < string.length / 2; i += 1) {
+  for (let i = 0; i < string.length; i += 1) {
     if (!isPrefixFound && string[i] === prefix) {
       prefixIndex = i + 1;
       isPrefixFound = true;
