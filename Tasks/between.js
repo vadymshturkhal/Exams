@@ -1,21 +1,21 @@
 'use strict';
 
-const getvaluebetween = (str, p, s) => {
-  const i = str.indexOf(p);
-  if (i === -1) return '';
+const getvaluebetween = (string, prefix, suffix) => {
+  const prefixBeginIndex = string.indexOf(prefix);
+  if (prefixBeginIndex === -1) return '';
   else {
-    const k = i + p.length;
-    str = str.substring(k);
-    if (s) {
-      const i = str.indexOf(s);
-      if (i === -1) {
+    const indexAfterPrefix = prefixBeginIndex + prefix.length;
+    string = string.substring(indexAfterPrefix);
+    if (suffix) {
+      const prefixBeginIndex = string.indexOf(suffix);
+      if (prefixBeginIndex === -1) {
         return '';
       } else {
-        str = str.substring(0, i);
+        string = string.substring(0, prefixBeginIndex);
       }
     }
   }
-  return str;
+  return string;
 };
 
 require('../Tests/between.js')(getvaluebetween);
