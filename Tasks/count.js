@@ -2,14 +2,14 @@
 
 // Sum all number values in dict
 
-const count = (obj) => {
+const totalValuesSum = (sumValuesFrom) => {
   let sum = 0;
-  const keys = Object.keys(obj);
+  const keys = Object.keys(sumValuesFrom);
   keys.forEach((key) => {
-    const value = obj[key];
+    const value = sumValuesFrom[key];
     if (typeof value === 'number') sum += value;
   });
   return sum;
 };
 
-require('../Tests/count.js')(count);
+require('../Tests/count.js')(totalValuesSum);
