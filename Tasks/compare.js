@@ -2,19 +2,20 @@
 
 // Compare two dictionaries
 
-const compare = (first_values, ...parameters_LIST) => {
-  const second_values = parameters_LIST[0];
-  const a = Object.keys(first_values);
-  const b = Object.keys(second_values);
-  if (a.join('-') !== b.join('-')) return false;
-  let e = true;
-  for (const c of a) {
-    if (first_values[c] === second_values[c]) e = e && true;
+const isTheSameDicts = (dictToCompare, otherDict) => {
+  const dictToCompareKeys = Object.keys(dictToCompare);
+  const otherDictKeys = Object.keys(otherDict);
+  if (dictToCompareKeys.join('-') !== otherDictKeys.join('-')) return false;
+
+  let flag = true;
+  for (const key of dictToCompareKeys) {
+    if (dictToCompare[key] === otherDict[key]) flag = flag && true;
     else {
-      e = e && false;
+      flag = flag && false;
     }
   }
-  return e;
+
+  return flag;
 };
 
-require('../Tests/compare.js')(compare);
+require('../Tests/compare.js')(isTheSameDicts);
