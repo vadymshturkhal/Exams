@@ -4,13 +4,13 @@
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-const parseDay = (s) => {
+const dayToNum = (day) => {
   for (let i = 0; i < DAYS.length; i++) {
-    if (s.startsWith(DAYS[i].toLowerCase())) {
+    if (day.startsWith(DAYS[i].toLowerCase())) {
       return i + 1;
     }
   }
   return -1;
 };
 
-require('../Tests/day.js')(parseDay);
+require('../Tests/day.js')(dayToNum);
