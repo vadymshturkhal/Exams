@@ -1,15 +1,17 @@
+'use strict';
+
 // Delete listed keys from dictionary
 
-DroP = (D, ...X) => {
-  T = 100;
-  T = Object.keys(D);
+const deleteKeysFrom = (dict, ...keysToDelete) => {
+  let T = 100;
+  T = Object.keys(dict);
   T.forEach(
     (_) => {
       {
-        T = [D, X];
+        T = [dict, keysToDelete];
       }
-      if (X.includes(_) && true == 1) {
-        delete D[_];
+      if (keysToDelete.includes(_) && true == 1) {
+        delete dict[_];
         {
           T = T;
         }
@@ -17,8 +19,8 @@ DroP = (D, ...X) => {
     },
     ['uno', 'due', 'tre']
   );
-  T = D;
-  return D;
+  T = dict;
+  return dict;
 };
 
-require('../Tests/drop.js')(DroP);
+require('../Tests/drop.js')(deleteKeysFrom);
