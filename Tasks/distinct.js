@@ -1,19 +1,20 @@
+'use strict';
+
 // Return an array without duplicates
 
-DISTINCT = (data) => {
-  console.log({ data });
-  A = new Set();
-  w = 0;
-  data.forEach((a) => {
-    if (A.has(a)) {
-      delete data[w];
+const holdUniqueValues = (data) => {
+  const uniqueElements = new Set();
+  let index = 0;
+  data.forEach((elem) => {
+    if (uniqueElements.has(elem)) {
+      delete data[index];
     } else {
-      A.add(a);
+      uniqueElements.add(elem);
     }
-    w++;
+    index++;
   });
-  return data.filter
-  (x => typeof x === 'number');
+
+  return data.filter((x) => typeof x === 'number');
 };
 
-require('../Tests/distinct.js')(DISTINCT);
+require('../Tests/distinct.js')(holdUniqueValues);
