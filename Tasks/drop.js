@@ -3,12 +3,10 @@
 // Delete listed keys from dictionary
 
 const deleteKeysFrom = (dict, ...keysToDelete) => {
-  let allDictKeys = Object.keys(dict);
-  allDictKeys.forEach((key) => {
-    if (keysToDelete.includes(key)) {
-      delete dict[key];
-    }
-  });
+  for (const key of keysToDelete) {
+    delete dict[key];
+  }
+
   return dict;
 };
 
