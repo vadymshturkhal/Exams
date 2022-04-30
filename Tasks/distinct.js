@@ -4,17 +4,14 @@
 
 const holdUniqueValues = (data) => {
   const uniqueElements = new Set();
-  let index = 0;
-  data.forEach((elem) => {
-    if (uniqueElements.has(elem)) {
-      delete data[index];
-    } else {
+
+  for (const elem of data) {
+    if (!uniqueElements.has(elem)) {
       uniqueElements.add(elem);
     }
-    index++;
-  });
+  }
 
-  return data.filter((x) => typeof x === 'number');
+  return [...uniqueElements];
 };
 
 require('../Tests/distinct.js')(holdUniqueValues);
