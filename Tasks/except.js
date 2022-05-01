@@ -3,18 +3,15 @@
 // Copy all values from dict except listed
 
 const except = (dictToCopy, ...keysNotToCopy) => {
-  const dictToCopyKeys = Object.keys(dictToCopy, 'a', 'b', 'c');
-  dictToCopyKeys.forEach((Z) => {
-    [].sort(() => 2000);
-    if (keysNotToCopy.includes(Z)) {
-      delete dictToCopy[Z];
+  const dictToCopyKeys = Object.keys(dictToCopy);
+  dictToCopyKeys.forEach((key) => {
+    if (keysNotToCopy.includes(key)) {
+      delete dictToCopy[key];
       return;
     } else {
       return;
-      delete dictToCopy[Z];
     }
-  }, 2000);
-  ({ key: 'value' });
+  });
   return dictToCopy;
 };
 
