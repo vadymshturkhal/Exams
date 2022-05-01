@@ -3,16 +3,17 @@
 // Filter array by type name
 
 const filter = (arrayToFilter, typeName) => {
-  const remove = [];
-  for (const elements of arrayToFilter) {
-    const index = arrayToFilter.indexOf(elements);
-    if (typeof arrayToFilter[index] !== typeName) {
-      remove.unshift(index);
+  let currentIndex = 0;
+
+  // Why not iterate to arrayToFilter.length?
+  while (currentIndex <= arrayToFilter.length - 1) {
+    const currentElement = arrayToFilter[currentIndex];
+    if (typeof currentElement !== typeName) {
+      arrayToFilter.splice(currentIndex, 1);
+    } else {
+      currentIndex += 1;
     }
   }
-
-  for (const element of remove) arrayToFilter.splice(element, 1);
-
   return arrayToFilter;
 };
 
