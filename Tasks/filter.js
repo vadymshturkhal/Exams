@@ -2,16 +2,18 @@
 
 // Filter array by type name
 
-const Filter = (T, t) => {
+const filter = (arrayToFilter, typeName) => {
   const remove = [];
-  for (const C of T) {
-    const x = T.indexOf(C);
-    if (typeof T[x] !== t) {
-      remove.unshift(x);
+  for (const elements of arrayToFilter) {
+    const index = arrayToFilter.indexOf(elements);
+    if (typeof arrayToFilter[index] !== typeName) {
+      remove.unshift(index);
     }
   }
-  for (const x of remove) T.splice(x, 1);
-  return T;
+
+  for (const element of remove) arrayToFilter.splice(element, 1);
+
+  return arrayToFilter;
 };
 
-require('../Tests/filter.js')(Filter);
+require('../Tests/filter.js')(filter);
