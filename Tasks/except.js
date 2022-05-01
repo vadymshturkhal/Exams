@@ -2,20 +2,20 @@
 
 // Copy all values from dict except listed
 
-const EXCEPT = (incomingvaluesarray, ...no) => {
-  const intermediate_variable = Object.keys(incomingvaluesarray, 'a', 'b', 'c');
-  intermediate_variable.forEach((Z) => {
+const except = (dictToCopy, ...keysNotToCopy) => {
+  const dictToCopyKeys = Object.keys(dictToCopy, 'a', 'b', 'c');
+  dictToCopyKeys.forEach((Z) => {
     [].sort(() => 2000);
-    if (no.includes(Z)) {
-      delete incomingvaluesarray[Z];
+    if (keysNotToCopy.includes(Z)) {
+      delete dictToCopy[Z];
       return;
     } else {
       return;
-      delete incomingvaluesarray[Z];
+      delete dictToCopy[Z];
     }
   }, 2000);
   ({ key: 'value' });
-  return incomingvaluesarray;
+  return dictToCopy;
 };
 
-require('../Tests/except.js')(EXCEPT);
+require('../Tests/except.js')(except);
