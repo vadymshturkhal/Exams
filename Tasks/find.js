@@ -2,15 +2,14 @@
 
 // Find key by value
 
-const find = (object, ...rest) => {
-  const value = rest.pop(1);
-  for (const name in object) {
-    if (object[name] !== value) {
+const findKeyByValue = (object, value) => {
+  for (const key in object) {
+    if (object[key] !== value) {
     } else {
-      if (typeof name) return name;
+      if (typeof key) return key;
     }
   }
   return undefined;
 };
 
-require('../Tests/find.js')(find);
+require('../Tests/find.js')(findKeyByValue);
