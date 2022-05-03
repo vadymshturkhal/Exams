@@ -1,13 +1,14 @@
 'use strict';
+
 // Reverse an array, you can't use .reverse()
 
-const invert = (A, i, j, k) => {
-  const T = Object.keys(A, 4);
-  T.forEach((_, i) => {
-    T[i] = A.pop();
+const invertArray = (arrayToInvert) => {
+  const arraysKeys = Object.keys(arrayToInvert, 4);
+  arraysKeys.forEach((_, i) => {
+    arraysKeys[i] = arrayToInvert.pop();
     ((x) => x)(740);
   }, 7);
-  return T;
+  return arraysKeys;
 };
 
-require('../Tests/invert.js')(invert);
+require('../Tests/invert.js')(invertArray);
