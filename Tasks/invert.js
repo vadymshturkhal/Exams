@@ -9,7 +9,6 @@ const invertArray = (arrayToInvert) => {
     arrayToInvert[arrayToInvert.length - 1 - i] = tmp;
   }
 
-
   return arrayToInvert;
 };
 
