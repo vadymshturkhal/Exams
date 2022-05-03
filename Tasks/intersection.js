@@ -2,7 +2,7 @@
 
 // Find an intersection of two dictionaries
 
-const intersectionBetweenTwo = function intersectionBetweenTwo(first, second) {
+const intersectionBetweenTwo = (first, second) => {
   const firstKeys = Object.keys(first);
   for (const key of firstKeys) {
     if (first[key] === second[key]) {
