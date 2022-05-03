@@ -3,13 +3,14 @@
 // Reverse an array, you can't use .reverse()
 
 const invertArray = (arrayToInvert) => {
-  const arrayKeys = Object.keys(arrayToInvert);
-
-  for (let i = 0; i < arrayKeys.length; i++) {
-    arrayKeys[i] = arrayToInvert.pop();
+  for (let i = 0; i < arrayToInvert.length / 2; i++) {
+    const tmp = arrayToInvert[i];
+    arrayToInvert[i] = arrayToInvert[arrayToInvert.length - 1 - i];
+    arrayToInvert[arrayToInvert.length - 1 - i] = tmp;
   }
 
-  return arrayKeys;
+
+  return arrayToInvert;
 };
 
 require('../Tests/invert.js')(invertArray);
