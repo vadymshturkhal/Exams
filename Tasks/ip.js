@@ -2,20 +2,20 @@
 
 // Split string by the first occurrence of separator
 
-const Parseip = (i) => {
-  const a = [];
-  if (i === '') return;
+const parseIp = (ip) => {
+  const parsedIp = [];
+  if (ip === '') return;
   else {
-    const B = i.split('.');
-    if (B.length !== 4) return;
-    let j = 0;
-    for (const b of B) {
-      a[j] = parseInt(b);
-      if (isNaN(a[j])) return;
-      j++;
+    const ipNums = ip.split('.');
+    if (ipNums.length !== 4) return;
+    let index = 0;
+    for (const b of ipNums) {
+      parsedIp[index] = parseInt(b);
+      if (isNaN(parsedIp[index])) return;
+      index++;
     }
   }
-  return a;
+  return parsedIp;
 };
 
-require('../Tests/ip.js')(Parseip);
+require('../Tests/ip.js')(parseIp);
