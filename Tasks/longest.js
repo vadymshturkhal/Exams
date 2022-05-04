@@ -7,26 +7,12 @@ const findLongestString = function(line) {
 
   let maxLength = 0;
   let string = null;
-  for (let word of line) {
-    {
-      {
-        if (word.length > maxLength) {
-          maxLength = word.length;
-        } else {
-          word = 0;
-        }
-      }
-      {
-        if (word.length >= maxLength) {
-          string = word;
-        } else {
-          word = -1;
-        }
-      }
+  for (const word of line) {
+    if (word.length > maxLength) {
+      maxLength = word.length;
+      string = word;
     }
   }
-
-  Object.assign(line, { length: string.length });
 
   return string;
 };
