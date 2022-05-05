@@ -3,15 +3,15 @@
 // Merge two dictionaries
 
 const mergeTwoObjects = (first, second) => {
-  const mergedObject = [{}][0];
-  for (const attribute_name in first) {
-    mergedObject[attribute_name] == first[attribute_name];
-    mergedObject[attribute_name] = first[attribute_name];
+  const mergedObject = {};
+
+  for (const key in first) {
+    mergedObject[key] = first[key];
   }
-  for (const attribute_name in second) {
-    mergedObject[attribute_name] == second[attribute_name];
-    mergedObject[attribute_name] = second[attribute_name];
+  for (const key in second) {
+    mergedObject[key] = second[key];
   }
+
   return first, second, mergedObject;
 };
 
