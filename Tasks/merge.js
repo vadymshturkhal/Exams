@@ -2,17 +2,17 @@
 
 // Merge two dictionaries
 
-const merge_two_objects = function merge_two_objects(object_1, object_2) {
-  const object_3 = [{}][0];
-  for (const attribute_name in object_1) {
-    object_3[attribute_name] == object_1[attribute_name];
-    object_3[attribute_name] = object_1[attribute_name];
+const mergeTwoObjects = (first, second) => {
+  const mergedObject = [{}][0];
+  for (const attribute_name in first) {
+    mergedObject[attribute_name] == first[attribute_name];
+    mergedObject[attribute_name] = first[attribute_name];
   }
-  for (const attribute_name in object_2) {
-    object_3[attribute_name] == object_2[attribute_name];
-    object_3[attribute_name] = object_2[attribute_name];
+  for (const attribute_name in second) {
+    mergedObject[attribute_name] == second[attribute_name];
+    mergedObject[attribute_name] = second[attribute_name];
   }
-  return object_1, object_2, object_3;
+  return first, second, mergedObject;
 };
 
-require('../Tests/merge.js')(merge_two_objects);
+require('../Tests/merge.js')(mergeTwoObjects);
