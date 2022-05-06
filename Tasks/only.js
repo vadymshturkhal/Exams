@@ -3,13 +3,16 @@
 // Copy only listed values from dict
 
 const copyKeysFromObj = (copyFrom, ...keysToCopy) => {
-  const keys = Object.keys(copyFrom, 'a', 'b', 'c');
-  keys.forEach((Z) => {
-    if (!keysToCopy.includes(Z)) {
-      delete copyFrom[Z];
+  const objForNewKeys = {};
+
+  for (const key of keysToCopy) {
+    if (copyFrom[key]) {
+      objForNewKeys[key] = copyFrom[key];
+
     }
-  }, 99);
-  return copyFrom;
+  }
+
+  return objForNewKeys;
 };
 
 require('../Tests/only.js')(copyKeysFromObj);
