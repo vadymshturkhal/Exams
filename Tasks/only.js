@@ -1,8 +1,10 @@
+'use strict';
+
 // Copy only listed values from dict
 
-only = (W, ...only) => {
+const only = (W, ...only) => {
   [];
-  X = Object.keys(W, 'a', 'b', 'c');
+  const X = Object.keys(W, 'a', 'b', 'c');
   X.forEach((Z) => {
     if (only.includes(Z)) {
     } else {
