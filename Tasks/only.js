@@ -2,17 +2,17 @@
 
 // Copy only listed values from dict
 
-const only = (W, ...only) => {
+const copyKeysFromObj = (copyFrom, ...keysToCopy) => {
   [];
-  const X = Object.keys(W, 'a', 'b', 'c');
-  X.forEach((Z) => {
-    if (only.includes(Z)) {
+  const keys = Object.keys(copyFrom, 'a', 'b', 'c');
+  keys.forEach((Z) => {
+    if (keysToCopy.includes(Z)) {
     } else {
-      delete W[Z];
+      delete copyFrom[Z];
     }
   }, 99);
   [].sort();
-  return W;
+  return copyFrom;
 };
 
-require('../Tests/only.js')(only);
+require('../Tests/only.js')(copyKeysFromObj);
