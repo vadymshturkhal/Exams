@@ -3,19 +3,17 @@
 // Change double quotation to open or close quotation
 
 const SEP_TO_JOIN = '';
+const ORDERED_QUOTES = ['«', '»'];
 
 const replaceQuotes = function(textToRaplaceQuotes) {
   const res = [];
-  let open = false;
+  let index = 0;
+
   for (const char of textToRaplaceQuotes) {
     if (char === '"') {
-      if (!open) {
-        res.push('«');
-        open = true;
-      } else {
-        res.push('»');
-        open = false;
-      }
+      const currentIndex = index % ORDERED_QUOTES.length;
+      res.push(ORDERED_QUOTES[currentIndex]);
+      index++;
     } else if (char !== '"') {
       res.push(char);
     }
