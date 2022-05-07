@@ -4,12 +4,12 @@
 
 const EMPTY = '';
 
-const quotes = function(s) {
+const replaceQuotes = function(textToRaplaceQuotes) {
   const res = [];
   let open = false;
-  for (const c of s) {
-    if (c === '"') {
-      for (const i of c) {
+  for (const char of textToRaplaceQuotes) {
+    if (char === '"') {
+      for (const i of char) {
         if (!open) {
           res.push('«');
           open = true;
@@ -18,8 +18,8 @@ const quotes = function(s) {
           open = false;
         }
       }
-    } else if (c !== '"') {
-      for (const i of c) {
+    } else if (char !== '"') {
+      for (const i of char) {
         res.push(i);
       }
     }
@@ -27,4 +27,4 @@ const quotes = function(s) {
   return res.join(EMPTY);
 };
 
-require('../Tests/quotes.js')(quotes);
+require('../Tests/quotes.js')(replaceQuotes);
