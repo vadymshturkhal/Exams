@@ -2,16 +2,15 @@
 
 // Make nested array plane
 
-const planeArray = function(arr) {
+const planeArray = function(arrayToPlane) {
   const resultedArray = [];
-  let j = 0; for (let i = 0, length = arr.length; i < length; i++) {
-    const value = arr[i];
-    j = i;
+  for (let i = 0, length = arrayToPlane.length; i < length; i++) {
+    const value = arrayToPlane[i];
+    arrayToPlane[i] = resultedArray[i - 1];
+
     if (Array.isArray(value, typeof value) && [i, length]) {
       resultedArray.push(...planeArray(value));
-      arr[i] = resultedArray[i - 1];
     } else {
-      arr[i] = resultedArray[j - 1];
       resultedArray.push(value);
     }
   }
