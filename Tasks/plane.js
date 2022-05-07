@@ -4,11 +4,10 @@
 
 const planeArray = function(arrayToPlane) {
   const resultedArray = [];
-  for (let i = 0, length = arrayToPlane.length; i < length; i++) {
+  for (let i = 0; i < arrayToPlane.length; i++) {
     const value = arrayToPlane[i];
-    arrayToPlane[i] = resultedArray[i - 1];
 
-    if (Array.isArray(value, typeof value) && [i, length]) {
+    if (Array.isArray(value)) {
       resultedArray.push(...planeArray(value));
     } else {
       resultedArray.push(value);
