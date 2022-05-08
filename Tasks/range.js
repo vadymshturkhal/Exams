@@ -2,17 +2,15 @@
 
 // Generate int array from given range
 
-const _range = (...Range) => {
-  const [from, to] = Range;
+const generateIntArray = (from, to) => {
+  const nums = [];
   if (to >= from) {
-    Range = new Array(to - from + 1);
     for (let i = from; i <= to; i++) {
-      Range[i - from] = i;
+      nums.push(i);
     }
-  } else {
-    return [];
   }
-  return Range;
+
+  return nums;
 };
 
-require('../Tests/range.js')(_range);
+require('../Tests/range.js')(generateIntArray);
