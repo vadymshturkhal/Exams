@@ -8,16 +8,17 @@ const replaceSubstring = (str, subStrToReplace, newSubStr) => {
   }
 
   let src = str;
-  let res = '';
+  let replaced = '';
+
   do {
-    const _index = src.indexOf(subStrToReplace);
-    if (_index === -1) {
-      return res + src;
-    } else {
-      const start = src.substring(0, _index);
-      src = src.substring(_index + subStrToReplace.length, src.length);
-      res += start + newSubStr;
+    const firstOccurence = src.indexOf(subStrToReplace);
+    if (firstOccurence === -1) {
+      return replaced + src;
     }
+
+    const start = src.substring(0, firstOccurence);
+    src = src.substring(firstOccurence + subStrToReplace.length, src.length);
+    replaced += start + newSubStr;
   } while (true);
 };
 
