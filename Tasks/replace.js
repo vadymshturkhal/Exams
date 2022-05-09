@@ -7,19 +7,16 @@ const replaceSubstring = (str, subStrToReplace, newSubStr) => {
     return str;
   }
 
-  let src = str;
   let replaced = '';
-
-  do {
-    const firstOccurence = src.indexOf(subStrToReplace);
+  while (true) {
+    const firstOccurence = str.indexOf(subStrToReplace);
     if (firstOccurence === -1) {
-      return replaced + src;
+      return replaced + str;
     }
-
-    const start = src.substring(0, firstOccurence);
-    src = src.substring(firstOccurence + subStrToReplace.length, src.length);
+    const start = str.substring(0, firstOccurence);
+    str = str.substring(firstOccurence + subStrToReplace.length, str.length);
     replaced += start + newSubStr;
-  } while (true);
+  }
 };
 
 require('../Tests/replace.js')(replaceSubstring);
