@@ -1,24 +1,24 @@
 'use strict';
 
-// Replace substring with newstr
+// Replace substring with newSubStr
 
-const Replace = (str, substr, newstr) => {
-  if (substr === '') {
+const replaceSubstring = (str, subStrToReplace, newSubStr) => {
+  if (subStrToReplace === '') {
     return str;
-  } else {
-    let src = str;
-    let res = '';
-    do {
-      const _index = src.indexOf(substr);
-      if (_index === -1) {
-        return res + src;
-      } else {
-        const start = src.substring(0, _index);
-        src = src.substring(_index + substr.length, src.length);
-        res += start + newstr;
-      }
-    } while (true);
   }
+
+  let src = str;
+  let res = '';
+  do {
+    const _index = src.indexOf(subStrToReplace);
+    if (_index === -1) {
+      return res + src;
+    } else {
+      const start = src.substring(0, _index);
+      src = src.substring(_index + subStrToReplace.length, src.length);
+      res += start + newSubStr;
+    }
+  } while (true);
 };
 
-require('../Tests/replace.js')(Replace);
+require('../Tests/replace.js')(replaceSubstring);
