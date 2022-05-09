@@ -13,9 +13,13 @@ const replaceSubstring = (str, subStrToReplace, newSubStr) => {
     if (firstOccurence === -1) {
       return replaced + str;
     }
-    const start = str.substring(0, firstOccurence);
-    str = str.substring(firstOccurence + subStrToReplace.length, str.length);
-    replaced += start + newSubStr;
+    const beforeSubStr = str.substring(0, firstOccurence);
+
+    const afterSubStrIndex = firstOccurence + subStrToReplace.length;
+    const afterSubStr = str.substring(afterSubStrIndex, str.length);
+
+    str = afterSubStr;
+    replaced += beforeSubStr + newSubStr;
   }
 };
 
