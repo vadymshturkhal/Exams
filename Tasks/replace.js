@@ -8,19 +8,34 @@ const replaceSubstring = (str, subStrToReplace, newSubStr) => {
   }
 
   let replaced = '';
-  while (true) {
-    const firstOccurence = str.indexOf(subStrToReplace);
-    if (firstOccurence === -1) {
-      return replaced + str;
+  let maybeReplace = '';
+  let replaceIndex = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === subStrToReplace[replaceIndex]) {
+      replaceIndex++;
+      maybeReplace += str[i];
+      continue;
     }
-    const beforeSubStr = str.substring(0, firstOccurence);
 
-    const afterSubStrIndex = firstOccurence + subStrToReplace.length;
-    const afterSubStr = str.substring(afterSubStrIndex, str.length);
+    if (maybeReplace.length !== 0) {
+      if (maybeReplace.length === subStrToReplace.length) {
+        replaced += newSubStr;
+      } else {
+        replaced += maybeReplace;
+      }
+      replaceIndex = 0;
+      maybeReplace = '';
+    }
 
-    str = afterSubStr;
-    replaced += beforeSubStr + newSubStr;
+    replaced += str[i];
   }
+
+  if (maybeReplace.length === subStrToReplace.length) {
+    replaced += newSubStr;
+  }
+
+  return replaced;
 };
 
 require('../Tests/replace.js')(replaceSubstring);
