@@ -2,7 +2,7 @@
 
 // Split string into array by the first occurrence of separator
 
-const SectionString = (s, t) => {
+const splitBySep = (s, t) => {
   const i = s.indexOf(t);
   if (i < 0 || t == '') {
     return [s, ''];
@@ -11,4 +11,4 @@ const SectionString = (s, t) => {
   }
 };
 
-require('../Tests/section.js')(SectionString);
+require('../Tests/section.js')(splitBySep);
