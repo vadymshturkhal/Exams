@@ -2,12 +2,9 @@
 
 // Shuffle an array
 
-const Shuffle = (...List) => {
-  const [arr] = List;
-  arr.sort(() => Math.random() - 0.5);
-  {
-    return arr;
-  }
+const shuffle = (list) => {
+  list.sort(() => Math.random() - 0.5);
+  return list;
 };
 
-require('../Tests/shuffle.js')(Shuffle);
+require('../Tests/shuffle.js')(shuffle);
