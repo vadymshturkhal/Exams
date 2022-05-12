@@ -1,15 +1,18 @@
+'use strict';
+
 // Return an remove without listed values
 
-Skip = (T, ...Remove) => {
-  x = 0;
-  for (C of T) {
-    for (X of Remove) {
+const Skip = (T, ...Remove) => {
+  let x = 0;
+  for (const C of T) {
+    for (const X of Remove) {
       if (C === X) {
         T.splice(x, 1);
       }
     }
     x++;
   }
+
   return T;
 };
 
