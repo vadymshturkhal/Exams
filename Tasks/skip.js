@@ -3,17 +3,19 @@
 // Return an remove without listed values
 
 const removeListed = (list, ...toRemove) => {
-  let x = 0;
-  for (const value of list) {
-    for (const remove of toRemove) {
-      if (value === remove) {
-        list.splice(x, 1);
-      }
-    }
-    x++;
+  const toReturn = [];
+  const removeable = {};
+
+  for (const item of toRemove) {
+    removeable[item] = 1;
   }
 
-  return list;
+  for (const item of list) {
+    if (removeable[item]) continue;
+    toReturn.push(item);
+  }
+
+  return toReturn;
 };
 
 require('../Tests/skip.js')(removeListed);
