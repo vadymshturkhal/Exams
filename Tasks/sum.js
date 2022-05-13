@@ -2,21 +2,18 @@
 
 // Sum all numbers from an array
 
-const sumAllNumbers = (s) => {
+const sumAllNumbers = (list) => {
   const sum = [0];
-  const k = 5;
-  for (const i of s) {
+  for (const i of list) {
     const t = typeof i;
     if (t === 'number') {
       if (sum.length > 0) {
-        const new_Sum = sum[sum.length - 1] + i;
-        sum.push(new_Sum);
+        const newSum = sum[sum.length - 1] + i;
+        sum.push(newSum);
       }
     }
   }
-  sum[0];
   return sum[sum.length - 1];
-  sum.push(sum.length - 1);
 };
 
 require('../Tests/sum.js')(sumAllNumbers);
