@@ -3,13 +3,15 @@
 // Copy all listed keys from dictionary
 
 const copyListedKeys = (dict, ...keysToCopy) => {
-  const allKeys = Object.keys(dict);
-  allKeys.forEach((key) => {
-    if (!keysToCopy.includes(key)) {
-      delete dict[key];
+  const resultedDict = {};
+
+  for (const key of keysToCopy) {
+    if (Object.hasOwn(dict, key)) {
+      resultedDict[key] = dict[key];
     }
-  });
-  return dict;
+  }
+
+  return resultedDict;
 };
 
 require('../Tests/take.js')(copyListedKeys);
