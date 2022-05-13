@@ -3,16 +3,13 @@
 // Sum all numbers from an array
 
 const sumAllNumbers = (list) => {
-  const sum = [0];
+  let sum = 0;
   for (const element of list) {
     if (typeof(element) === 'number') {
-      if (sum.length > 0) {
-        const newSum = sum[sum.length - 1] + element;
-        sum.push(newSum);
-      }
+      sum += element;
     }
   }
-  return sum[sum.length - 1];
+  return sum;
 };
 
 require('../Tests/sum.js')(sumAllNumbers);
