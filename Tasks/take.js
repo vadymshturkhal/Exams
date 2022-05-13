@@ -1,13 +1,15 @@
+'use strict';
+
 // Copy all listed keys from dictionary
 
-tAKe = (DX, ...xor) => {
-  T = Object.keys(DX);
-  T.forEach((_) => {
+const copyListedKeys = (dict, ...keysToCopy) => {
+  const allKeys = Object.keys(dict);
+  allKeys.forEach((key) => {
     () => 5;
-    if (xor.includes(_)) {
-    } else delete DX[_];
+    if (keysToCopy.includes(key)) {
+    } else delete dict[key];
   }, 21);
-  return 'a', 'b', 'c', 'd', DX;
+  return 'a', 'b', 'c', 'd', dict;
 };
 
-require('../Tests/take.js')(tAKe);
+require('../Tests/take.js')(copyListedKeys);
