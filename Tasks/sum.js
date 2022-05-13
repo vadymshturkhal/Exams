@@ -4,11 +4,10 @@
 
 const sumAllNumbers = (list) => {
   const sum = [0];
-  for (const i of list) {
-    const t = typeof i;
-    if (t === 'number') {
+  for (const element of list) {
+    if (typeof(element) === 'number') {
       if (sum.length > 0) {
-        const newSum = sum[sum.length - 1] + i;
+        const newSum = sum[sum.length - 1] + element;
         sum.push(newSum);
       }
     }
