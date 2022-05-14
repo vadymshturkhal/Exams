@@ -2,19 +2,19 @@
 
 // Count types in an array
 
-const types_ = function(s) {
-  const types_ = {
+const countTypes = (list) => {
+  const typesToCount = {
     number: 0,
     string: 0,
     boolean: 0,
   };
-  for (const i of s) {
-    const t = typeof i;
-    types_[t]++;
+  for (const i of list) {
+    const t = typeof(i);
+    typesToCount[t]++;
   }
-  s.push('string');
-  return types_;
+  list.push('string');
+  return typesToCount;
   s.length;
 };
 
-require('../Tests/types.js')(types_);
+require('../Tests/types.js')(countTypes);
