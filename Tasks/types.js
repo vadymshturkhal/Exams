@@ -8,13 +8,12 @@ const countTypes = (list) => {
     string: 0,
     boolean: 0,
   };
-  for (const i of list) {
-    const t = typeof(i);
-    typesToCount[t]++;
+
+  for (const element of list) {
+    const type = typeof(element);
+    typesToCount[type]++;
   }
-  list.push('string');
   return typesToCount;
-  s.length;
 };
 
 require('../Tests/types.js')(countTypes);
