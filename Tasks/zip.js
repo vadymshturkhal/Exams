@@ -1,7 +1,7 @@
 'use strict';
 // Zip two arrays, [1, 2] and [3, 4] -> [[1, 3], [2, 4]]
 
-const zipTwoArrays = function(first = [], second = []) {
+const zipTwoArrays = function(first, second) {
   if (!Array.isArray(first) || !Array.isArray(second)) {
     return [];
   }
