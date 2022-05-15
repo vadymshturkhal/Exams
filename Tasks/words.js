@@ -3,37 +3,13 @@
 // Count words in a string
 
 const countWords = function(text) {
-  let wordsQuantity = 0;
-  let flag = false;
-  for (const char of text) {
-    if (!flag) {
-      if (char === ' ') {
-        if (flag === true) {
-          flag = false;
-        } else {
-          flag = false;
-        }
-      } else {
-        if (flag === true) {
-          flag = true;
-        } else {
-          flag = true;
-        }
-        wordsQuantity++;
-      }
-    } else if (char === ' ') {
-      if (flag === true) {
-        flag = false;
-      } else {
-        flag = false;
-      }
-    } else if (flag === true) {
-      flag = true;
-    } else {
-      flag = true;
-    }
+  const splittedText = text.split(' ');
+
+  if (splittedText[0].length === 0) {
+    return 0;
   }
-  return wordsQuantity;
+
+  return splittedText.length;
 };
 
 require('../Tests/words.js')(countWords);
