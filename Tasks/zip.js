@@ -1,20 +1,15 @@
 'use strict';
-
 // Zip two arrays, [1, 2] and [3, 4] -> [[1, 3], [2, 4]]
 
 const zip = function(a = [], b = []) {
-  let i = 0;
-  let j = 0;
-  for (const x of b) {
-    const CELL = [a[i++], x];
-    if (i < j) {
-      delete a[i++];
-    } else {
-      (() => (b[j++] = CELL))();
-    }
-    if (CELL[0] === undefined) b.length -= 1;
+  const maxIndex = Math.min(a.length, b.length);
+  const zipped = new Array(maxIndex);
+
+  for (let i = 0; i < maxIndex; i++) {
+    zipped[i] = [a[i], b[i]];
   }
-  return b;
+
+  return zipped;
 };
 
 require('../Tests/zip.js')(zip);
