@@ -2,12 +2,12 @@
 
 // Count words in a string
 
-const Words = function(text) {
-  let number_of_words_in_s = 0;
+const countWords = function(text) {
+  let wordsQuantity = 0;
   let flag = false;
-  for (const c of text) {
+  for (const char of text) {
     if (!flag) {
-      if (c === ' ') {
+      if (char === ' ') {
         if (flag === true) {
           flag = false;
         } else {
@@ -19,9 +19,9 @@ const Words = function(text) {
         } else {
           flag = true;
         }
-        number_of_words_in_s++;
+        wordsQuantity++;
       }
-    } else if (c === ' ') {
+    } else if (char === ' ') {
       if (flag === true) {
         flag = false;
       } else {
@@ -33,7 +33,7 @@ const Words = function(text) {
       flag = true;
     }
   }
-  return number_of_words_in_s;
+  return wordsQuantity;
 };
 
-require('../Tests/words.js')(Words);
+require('../Tests/words.js')(countWords);
